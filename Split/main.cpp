@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<stdlib.h>
 using namespace std;
 
@@ -6,7 +6,7 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	int n = 0;
-	cout << "Ââåäèòå ðàçìåð ìàññèâà: "; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; cin >> n;
 	
 	int* arr = new int[n];
 	
@@ -37,13 +37,13 @@ void main()
 		}
 	}
 	
-	cout << "Ìàññèâ ñ âûäåëåííûìè ÷åòíûìè ÷èñëàìè: " << endl;
+	cout << "ÐœÐ°ÑÑÐ¸Ð² Ñ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð½Ñ‹Ð¼Ð¸ Ñ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸: " << endl;
 	
 	for (int i = 0; i < even_x; i++)
 	{
 		cout << *(even_Arr + i) << "\t";
 	}
-	cout << endl << "Ìàññèâ ñ âûäåëåííûìè íå ÷åòíûìè ÷èñëàìè: " << endl;
+	cout << endl << "ÐœÐ°ÑÑÐ¸Ð² Ñ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð½Ñ‹Ð¼Ð¸ Ð½Ðµ Ñ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸: " << endl;
 	
 	for (int i = 0; i < old_x; i++)
 	{
