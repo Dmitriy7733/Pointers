@@ -1,15 +1,23 @@
 ﻿#include<iostream>
 using namespace std;
+
 void FillRand(int arr[], int n);
-void Print(int arr[], int n);
+template<typename T>
+void Print(T arr[], int n);
 
-int* push_Back(int arr[], int& n, int value);
-int* push_front(int arr[], int& n, int value);
-int* pop_back(int arr[], int& n);
-int* pop_front(int arr[], int& n);
+template<typename T>
+T* push_Back(T arr[], int& n, T value);
+template<typename T>
+T* push_front(T arr[], int& n, T value);
+template<typename T>
+T* pop_back(T arr[], int& n);
+template<typename T>
+T* pop_front(T arr[], int& n);
 
-int* insert(int arr[], int& n, int index, int value);
-int* erase(int arr[], int& n, int index);
+template<typename T>
+T* insert(T arr[], int& n, int index, T value);
+template<typename T>
+T* erase(T arr[], int& n, int index);
 
 
 
@@ -47,9 +55,10 @@ void main()
 	delete[] arr;
 
 }
-int* push_Back(int arr[], int& n, int value)
+template<typename T>
+T* push_Back(T arr[], int& n, T value)
 {
-	int* buffer = new int[n + 1];
+	T* buffer = new int[n + 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
@@ -60,9 +69,10 @@ int* push_Back(int arr[], int& n, int value)
 	n++;
 	return arr;
 }
-int* push_front(int arr[], int& n, int value)
+template<typename T>
+T* push_front(T arr[], int& n, T value)
 {
-	int* buffer = new int[n + 1];
+	T* buffer = new int[n + 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i + 1] = arr[i];
@@ -73,20 +83,23 @@ int* push_front(int arr[], int& n, int value)
 	n++;
 	return buffer;
 }
-int* pop_back(int arr[], int& n)
+template<typename T>
+T* pop_back(T arr[], int& n)
 {
-	int* buffer = new int[--n];
+	T* buffer = new int[--n];
 	for (int i = 0; i < n; i++) buffer[i] = arr[i];
 	delete[] arr;
 	return buffer;
 }
-int* pop_front(int arr[], int& n)
+template<typename T>
+T* pop_front(T arr[], int& n)
 {
-	int* buffer = new int[--n];
+	T* buffer = new int[--n];
 	for (int i = 0; i < n; i++)buffer[i] = arr[i+1];
 	delete[] arr;
 	return buffer;
 }
+
 void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -95,7 +108,8 @@ void FillRand(int arr[], const int n)
 
 	}
 }
-void Print(int arr[], int n)
+template<typename T>
+void Print(T arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -103,9 +117,10 @@ void Print(int arr[], int n)
 	}
 	cout << endl;
 }
-int* insert(int arr[], int &n, int index, int value)
+template<typename T>
+T* insert(T arr[], int &n, int index, T value)
 {
-	int* buffer = new int[n + 1];
+	T* buffer = new int[n + 1];
 	for (int i = 0; i < index; i++)
 	{
 		buffer[i] = arr[i];
@@ -124,9 +139,10 @@ int* insert(int arr[], int &n, int index, int value)
 	return arr;
 	
 }
-int* erase(int arr[], int& n, int index)
+template<typename T>
+T* erase(T arr[], int& n, int index)
 {
-	int* buffer = new int[n - 1];
+	T* buffer = new int[n - 1];
 	for (int i = 0; i < index; i++)
 	{
 		buffer[i] = arr[i];
